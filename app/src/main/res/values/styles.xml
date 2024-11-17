@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Other styles... -->
+
+    <style name="NavigationMapRoute">
+        <!-- Customize your route style here -->
+    </style>
+</resources>

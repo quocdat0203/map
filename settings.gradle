@@ -1,0 +1,35 @@
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://api.maptiler.com/maps/android/v2/repo/'
+        }
+        maven {
+            url = uri("https://api.mapbox.com/downloads/v2/releases/maven")
+            // Do not change the username below. It should always be "mapbox" (not your username).
+            credentials.username = "mapbox"
+            // Use the secret token stored in gradle.properties as the password
+            credentials.password = "sk.eyJ1IjoibWFpdGhpaGlldSIsImEiOiJjbTMwZ3pheWIwbWNqMmtzaDFlN3NqN3EwIn0.MuKMZw6WXm8KBCLb1D0rXA"
+            authentication { basic(BasicAuthentication) }
+        }
+    }
+}
+
+rootProject.name = "Map_App_Direction"
+include ':app'
